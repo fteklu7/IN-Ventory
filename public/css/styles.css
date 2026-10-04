@@ -1,0 +1,92 @@
+/* Brand colors */
+:root {
+  --abeba-berbere: #a8322d;
+  --abeba-berbere-dark: #86241f;
+  --abeba-coffee: #2e1c12;
+  --abeba-teff: #f6ecdc;
+  --abeba-cream: #fff9f0;
+  --abeba-gold: #e0a526;
+  --abeba-green: #2f7d3b;
+
+  --bs-body-bg: var(--abeba-teff);
+  --bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Ethiopic', sans-serif;
+  --bs-link-color-rgb: 168, 50, 45;
+  --bs-link-hover-color-rgb: 134, 36, 31;
+}
+
+h1, h2, h3, .section-title, .brand-text, .hero-title {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
+.section-title { color: var(--abeba-coffee); }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--abeba-berbere);
+}
+
+/* Green, gold and red stripe */
+.tibeb-stripe {
+  height: 6px;
+  background: linear-gradient(90deg,
+    var(--abeba-green) 0 33.33%, var(--abeba-gold) 33.33% 66.66%, var(--abeba-berbere) 66.66% 100%);
+}
+
+.bg-coffee { background-color: var(--abeba-coffee); }
+.brand-text { font-size: 1.2rem; font-weight: 700; }
+.navbar .nav-link { font-weight: 500; }
+.navbar .nav-link.active { color: var(--abeba-gold) !important; }
+
+/* Buttons */
+.btn-berbere {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--abeba-berbere);
+  --bs-btn-border-color: var(--abeba-berbere);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--abeba-berbere-dark);
+  --bs-btn-hover-border-color: var(--abeba-berbere-dark);
+  --bs-btn-active-bg: var(--abeba-berbere-dark);
+  --bs-btn-active-border-color: var(--abeba-berbere-dark);
+  --bs-btn-disabled-bg: var(--abeba-berbere);
+  --bs-btn-disabled-border-color: var(--abeba-berbere);
+  --bs-btn-focus-shadow-rgb: 168, 50, 45;
+}
+
+/* Product cards */
+.ratio-3x2 { --bs-aspect-ratio: 66.6667%; }
+.product-card {
+  border: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--abeba-cream);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 .75rem 1.5rem rgba(46, 28, 18, .15) !important; }
+.product-img-wrap { background: #e9dcc4; }
+.product-card .card-title { color: var(--abeba-coffee); }
+.local-name { font-family: 'Noto Sans Ethiopic', 'Nyala', 'Abyssinica SIL', serif; color: var(--abeba-berbere); font-size: .95rem; }
+
+/* Price & Availability pop-up */
+.product-modal .modal-content { border: 0; border-radius: 1rem; overflow: hidden; background: var(--abeba-cream); }
+.product-modal .modal-header { background: var(--abeba-coffee); color: var(--abeba-cream); border-bottom: 0; }
+.product-modal .modal-title { font-family: 'Fraunces', Georgia, serif; }
+.product-modal .modal-price { font-weight: 600; color: var(--abeba-coffee); }
+.product-modal .modal-footer { border-top: 1px dashed #d9c6a5; }
+
+/* Contact page */
+.contact-list li { display: flex; gap: .75rem; margin-bottom: 1rem; }
+.contact-list i { color: var(--abeba-berbere); font-size: 1.2rem; }
+
+/* Footer */
+.site-footer { background: var(--abeba-coffee); color: rgba(255, 249, 240, .75); }
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card { transition: none; }
+  .product-card:hover { transform: none; }
+}
+
+/* Keeps the footer at the bottom on short pages */
+body { min-height: 100vh; display: flex; flex-direction: column; }
+body > main { flex: 1 0 auto; }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main id="main" class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h1 class="section-title display-6">Contact Us</h1>
+        <p class="text-body-secondary">Have a question about the menu or catering? Send us a message and we will get back to you.</p>
+        <ul class="list-unstyled contact-list mt-4">
+          <li><i class="bi bi-geo-alt"></i> Purdue University<br>610 Purdue Mall<br>West Lafayette, IN 47907</li>
+          <li><i class="bi bi-telephone"></i> <a href="tel:+17654944600">(765) 494-4600</a></li>
+          <li><i class="bi bi-globe"></i> <a href="https://www.purdue.edu" rel="noopener" target="_blank">purdue.edu</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <% if (sent) { %>
+              <div class="alert alert-success d-flex gap-2 align-items-start" role="status">
+                <i class="bi bi-check-circle fs-5"></i>
+                <div><strong>Thank you!</strong> Your message was saved and we will get back to you soon.</div>
+              </div>
+            <% } %>
+
+            <form action="/contact" method="POST" novalidate>
+              <h2 class="h5 mb-3">Send us a message</h2>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" id="name" name="name" maxlength="80" required
+                         class="form-control<%= errors.name ? ' is-invalid' : '' %>" value="<%= values.name || '' %>">
+                  <% if (errors.name) { %><div class="invalid-feedback"><%= errors.name %></div><% } %>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" maxlength="120" required
+                         class="form-control<%= errors.email ? ' is-invalid' : '' %>" value="<%= values.email || '' %>">
+                  <% if (errors.email) { %><div class="invalid-feedback"><%= errors.email %></div><% } %>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea id="message" name="message" rows="5" maxlength="1000" required
+                            class="form-control<%= errors.message ? ' is-invalid' : '' %>"><%= values.message || '' %></textarea>
+                  <% if (errors.message) { %><div class="invalid-feedback"><%= errors.message %></div><% } %>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-berbere px-4"><i class="bi bi-envelope"></i> Send message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

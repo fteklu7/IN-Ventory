@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main id="main" class="container py-5">
+    <header class="mb-4">
+      <p class="eyebrow mb-1">Our menu</p>
+      <h1 class="section-title display-6 mb-0">Traditional Ethiopian food &amp; drink</h1>
+    </header>
+
+    <p class="small text-body-secondary mb-3"><%= products.length %> item<%= products.length === 1 ? '' : 's' %></p>
+
+    <% if (products.length === 0) { %>
+      <div class="alert alert-warning">No items found.</div>
+    <% } else { %>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+        <% products.forEach(function (product) { %>
+          <%- include('../partials/product-card', { product }) %>
+        <% }); %>
+      </div>
+    <% } %>
+  </main>
+
+  <%- include('../partials/product-modal') %>
+
+  <%- include('../partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

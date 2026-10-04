@@ -1,0 +1,19 @@
+<div class="col">
+  <article class="card h-100 product-card shadow-sm" data-product-id="<%= product.id %>"
+           data-name="<%= product.name %>" data-local-name="<%= product.local_name %>"
+           data-description="<%= product.description %>">
+    <div class="ratio ratio-3x2 product-img-wrap">
+      <img src="<%= product.image %>" class="card-img-top object-fit-cover"
+           alt="<%= product.name %>" loading="lazy">
+    </div>
+    <div class="card-body d-flex flex-column">
+      <h3 class="card-title h5 mb-0"><%= product.name %></h3>
+      <div class="local-name mb-2" lang="am"><%= product.local_name %></div>
+      <p class="card-text text-body-secondary small flex-grow-1"><%= product.description %></p>
+
+      <button type="button" class="btn btn-berbere w-100 js-details-btn" aria-haspopup="dialog">
+        <i class="bi bi-tag"></i> Price &amp; Availability
+      </button>
+    </div>
+  </article>
+</div>

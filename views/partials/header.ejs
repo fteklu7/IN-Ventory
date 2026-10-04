@@ -1,0 +1,26 @@
+<a class="visually-hidden-focusable" href="#main">Skip to content</a>
+<div class="tibeb-stripe" aria-hidden="true"></div>
+<nav class="navbar navbar-expand-md navbar-dark bg-coffee sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/products">
+      <img src="/images/favicon.svg" width="34" height="34" alt="">
+      <span class="brand-text"><%= siteName %></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <%# Links come from routes/navigation.js %>
+        <% navLinks.forEach(function (link) {
+             const active = currentPath.startsWith(link.href); %>
+          <li class="nav-item">
+            <a class="nav-link<%= active ? ' active' : '' %>" href="<%= link.href %>"
+               <%- active ? 'aria-current="page"' : '' %>><%= link.label %></a>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</nav>

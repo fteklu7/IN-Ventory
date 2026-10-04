@@ -1,0 +1,19 @@
+<%# Pop-up shared by all the product cards. main.js fills it in. %>
+<div class="modal fade product-modal" id="productModal" tabindex="-1" aria-labelledby="productModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="tibeb-stripe" aria-hidden="true"></div>
+      <div class="modal-header">
+        <h2 class="modal-title h5 mb-0" id="productModalTitle">Price &amp; Availability</h2>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="local-name mb-2" id="productModalLocalName" lang="am"></div>
+        <div id="productModalBody" aria-live="polite"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-berbere px-4" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

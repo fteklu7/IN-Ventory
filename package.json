@@ -1,0 +1,35 @@
+{
+  "name": "abeba-kitchen",
+  "version": "1.0.0",
+  "description": "Prototype website for Abeba (Indianapolis, IN) - Node.js, Express, EJS, Bootstrap and SQLite.",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "reset-db": "node scripts/reset-db.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "express",
+    "ejs",
+    "bootstrap",
+    "sqlite",
+    "prototype",
+    "restaurant"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  }
+}
